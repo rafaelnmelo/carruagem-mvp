@@ -1,0 +1,6 @@
+framework module Pods_Carruagem {
+  umbrella header "Pods-Carruagem-umbrella.h"
+
+  export *
+  module * { export * }
+}

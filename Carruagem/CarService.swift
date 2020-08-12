@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class CarsServices {
     
-    func getBrands(onComplete: @escaping (CarsBrands?) -> Void) {
+    func getBrands(onComplete: @escaping (CarBrand?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas").response { response in
-            guard let content = response.data, let brands = try? JSONDecoder().decode(CarsBrands.self, from: content) else {
+            guard let content = response.data, let brands = try? JSONDecoder().decode(CarBrand.self, from: content) else {
                 onComplete(nil)
                 return
             }
@@ -20,9 +21,9 @@ class CarsServices {
         }
     }
     
-    func getTemplate(onComplete: @escaping (CarsTemplates?) -> Void) {
+    func getTemplate(onComplete: @escaping (CarTemplate?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos").response { response in
-            guard let content = response.data, let template = try? JSONDecoder().decode(CarsTemplates.self, from: content) else {
+            guard let content = response.data, let template = try? JSONDecoder().decode(CarTemplate.self, from: content) else {
                 onComplete(nil)
                 return
             }
@@ -31,9 +32,9 @@ class CarsServices {
         
     }
     
-    func getYears(onComplete: @escaping (CarsYears?) -> Void) {
+    func getYears(onComplete: @escaping (CarYear?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/5940/anos").response { response in
-            guard let content = response.data, let years = try? JSONDecoder().decode(CarsYears.self, from: content) else {
+            guard let content = response.data, let years = try? JSONDecoder().decode(CarYear.self, from: content) else {
                  onComplete(nil)
                  return
              }
@@ -42,9 +43,9 @@ class CarsServices {
         
     }
     
-    func getCarValue(onComplete: @escaping (CarsValues?) -> Void) {
+    func getCarValue(onComplete: @escaping (CarValue?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/5940/anos/2014-3").response { response in
-             guard let content = response.data, let carsValues = try? JSONDecoder().decode(CarsValues.self, from: content) else {
+             guard let content = response.data, let carsValues = try? JSONDecoder().decode(CarValue.self, from: content) else {
                  onComplete(nil)
                  return
              }
