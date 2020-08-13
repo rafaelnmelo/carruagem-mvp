@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F817653887F7A66EF048DF6 /* Pods_Carruagem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C957F4000039E2C29E6E87 /* Pods_Carruagem.framework */; };
+		75614A9624E5787700A666FE /* GenericCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */; };
+		75614A9824E5804C00A666FE /* GenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75614A9724E5804C00A666FE /* GenericCell.xib */; };
 		75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AC24E42429008C3D14 /* AppDelegate.swift */; };
 		75B355AF24E42429008C3D14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AE24E42429008C3D14 /* SceneDelegate.swift */; };
 		75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355B024E42429008C3D14 /* GarageViewController.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		23CEC3B323C6F2392D0BED5D /* Pods-Carruagem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carruagem.release.xcconfig"; path = "Target Support Files/Pods-Carruagem/Pods-Carruagem.release.xcconfig"; sourceTree = "<group>"; };
 		3F02F025E584FA67C2BC2BF0 /* Pods-Carruagem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carruagem.debug.xcconfig"; path = "Target Support Files/Pods-Carruagem/Pods-Carruagem.debug.xcconfig"; sourceTree = "<group>"; };
+		75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellTableViewCell.swift; sourceTree = "<group>"; };
+		75614A9724E5804C00A666FE /* GenericCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericCell.xib; sourceTree = "<group>"; };
 		75B355A924E42429008C3D14 /* Carruagem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carruagem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B355AC24E42429008C3D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75B355AE24E42429008C3D14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 		75B355CA24E4281D008C3D14 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */,
+				75614A9724E5804C00A666FE /* GenericCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				75B355B924E4242A008C3D14 /* LaunchScreen.storyboard in Resources */,
 				75B355B624E4242A008C3D14 /* Assets.xcassets in Resources */,
 				75B355B424E42429008C3D14 /* Main.storyboard in Resources */,
+				75614A9824E5804C00A666FE /* GenericCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B355D224E428DA008C3D14 /* CarBrand.swift in Sources */,
+				75614A9624E5787700A666FE /* GenericCellTableViewCell.swift in Sources */,
 				75B355CC24E42877008C3D14 /* CarValue.swift in Sources */,
 				75B355D424E42901008C3D14 /* CarService.swift in Sources */,
 				75B355CE24E42893008C3D14 /* CarYear.swift in Sources */,

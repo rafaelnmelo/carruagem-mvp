@@ -13,11 +13,11 @@ class CarsServices {
     
     func getBrands(onComplete: @escaping (CarBrand?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas").response { response in
-            guard let content = response.data, let brands = try? JSONDecoder().decode(CarBrand.self, from: content) else {
+            guard let content = response.data, let brand = try? JSONDecoder().decode(CarBrand.self, from: content) else {
                 onComplete(nil)
                 return
             }
-            onComplete(brands)
+            onComplete(brand)
         }
     }
     
@@ -34,22 +34,22 @@ class CarsServices {
     
     func getYears(onComplete: @escaping (CarYear?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/5940/anos").response { response in
-            guard let content = response.data, let years = try? JSONDecoder().decode(CarYear.self, from: content) else {
+            guard let content = response.data, let year = try? JSONDecoder().decode(CarYear.self, from: content) else {
                  onComplete(nil)
                  return
              }
-             onComplete(years)
+             onComplete(year)
          }
         
     }
     
     func getCarValue(onComplete: @escaping (CarValue?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/5940/anos/2014-3").response { response in
-             guard let content = response.data, let carsValues = try? JSONDecoder().decode(CarValue.self, from: content) else {
+             guard let content = response.data, let carValue = try? JSONDecoder().decode(CarValue.self, from: content) else {
                  onComplete(nil)
                  return
              }
-             onComplete(carsValues)
+             onComplete(carValue)
          }
         
     }
