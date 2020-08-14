@@ -10,6 +10,7 @@
 		2F817653887F7A66EF048DF6 /* Pods_Carruagem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C957F4000039E2C29E6E87 /* Pods_Carruagem.framework */; };
 		75614A9624E5787700A666FE /* GenericCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */; };
 		75614A9824E5804C00A666FE /* GenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75614A9724E5804C00A666FE /* GenericCell.xib */; };
+		75956B4E24E6C40400718AE6 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75956B4D24E6C40400718AE6 /* GaragePresenter.swift */; };
 		75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AC24E42429008C3D14 /* AppDelegate.swift */; };
 		75B355AF24E42429008C3D14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AE24E42429008C3D14 /* SceneDelegate.swift */; };
 		75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355B024E42429008C3D14 /* GarageViewController.swift */; };
@@ -31,6 +32,7 @@
 		3F02F025E584FA67C2BC2BF0 /* Pods-Carruagem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carruagem.debug.xcconfig"; path = "Target Support Files/Pods-Carruagem/Pods-Carruagem.debug.xcconfig"; sourceTree = "<group>"; };
 		75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellTableViewCell.swift; sourceTree = "<group>"; };
 		75614A9724E5804C00A666FE /* GenericCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericCell.xib; sourceTree = "<group>"; };
+		75956B4D24E6C40400718AE6 /* GaragePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
 		75B355A924E42429008C3D14 /* Carruagem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carruagem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B355AC24E42429008C3D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75B355AE24E42429008C3D14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		75B355C624E4276A008C3D14 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				75956B4D24E6C40400718AE6 /* GaragePresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				75B355D424E42901008C3D14 /* CarService.swift in Sources */,
 				75B355CE24E42893008C3D14 /* CarYear.swift in Sources */,
 				75F0C49324E42C7100B8EED8 /* TemplateTableViewController.swift in Sources */,
+				75956B4E24E6C40400718AE6 /* GaragePresenter.swift in Sources */,
 				75B355D024E428BE008C3D14 /* CarTemplate.swift in Sources */,
 				75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */,
 				75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */,
