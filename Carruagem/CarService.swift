@@ -1,15 +1,17 @@
-//
-//  CarService.swift
-//  Carruagem
-//
-//  Created by Rafael Nunes on 12/08/20.
-//  Copyright © 2020 Rafael Nunes. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 
 class CarService {
+    
+    // CORRIGIR: Refazer tudo :)
+    
+    /*
+     Primeiro ponto: Centralizar os endpoints em uma Enum.
+     Segundo ponto: Centralizar as chamadas em um ServiceManager.
+     Terceiro ponto: Abstrair o domainURL e os seus parametros.
+     Quarto ponto: Service não é responsavel por fazer o Decoder.
+     Quinto ponto: onComplete é HORRIVEL, use completionHandler ou callback.
+     */
     
     func getBrand(onComplete: @escaping (CarBrand?) -> Void) {
         AF.request("https://parallelum.com.br/fipe/api/v1/carros/marcas").response { response in

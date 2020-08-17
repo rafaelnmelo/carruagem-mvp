@@ -1,35 +1,22 @@
-//
-//  GaragePresenter.swift
-//  Carruagem
-//
-//  Created by Rafael Nunes on 14/08/20.
-//  Copyright © 2020 Rafael Nunes. All rights reserved.
-//
-
 import Foundation
 
-protocol GaragePresenterDelegate {
+protocol GaragePresenterDelegate { // CORRIGIR: Herdar de uma class
     func provideBrandContent(object: [CarBrand])
     func provideTemplateContent(object: [CarTemplate])
     func provideYearContent(object: [CarYear])
     func provideValueContent(object: [CarValue])
 }
 
+// CORRIGIR GERAL: Regra de negócio totalmente bagunçada e confusa.
+
 class GaragePresenter {
     
-    let garageService = CarService()
-    var delegate: GaragePresenterDelegate?
-    
-    func setViewDelegate(reference: GaragePresenterDelegate) {
-        self.delegate = reference
-    }
+    let garageService = CarService() // CORRIGIR: Inicializar a instância do serviço no init é melhor.
+    var delegate: GaragePresenterDelegate? // CORRIGIR: Colocar o delegate como weak para evitar liquid memory
     
     func getBrand() {
         
-        let service = garageService
-        var object = [CarBrand]()
-        
-        service.getBrand { (response) in
+        service.getBrand { (response) in // CORRIGIR: Não precisa de ()
             if let brandResponse = response {
                 if !brandResponse.codigo.isEmpty, !brandResponse.nome.isEmpty {
                     object.append(brandResponse)
