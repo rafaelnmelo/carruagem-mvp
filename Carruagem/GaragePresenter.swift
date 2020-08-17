@@ -16,14 +16,14 @@ class GaragePresenter {
     
     func getBrand() {
         
-        service.getBrand { (response) in // CORRIGIR: Não precisa de ()
-            if let brandResponse = response {
-                if !brandResponse.codigo.isEmpty, !brandResponse.nome.isEmpty {
-                    object.append(brandResponse)
-                }
-            }
-            self.delegate?.provideBrandContent(object: object)
-        }
+//        service.getBrand { (response) in // CORRIGIR: Não precisa de ()
+//            if let brandResponse = response {
+//                if !brandResponse.codigo.isEmpty, !brandResponse.nome.isEmpty {
+//                    object.append(brandResponse)
+//                }
+//            }
+//            self.delegate?.provideBrandContent(object: object)
+//        }
     }
     
     func getTemplate() {
