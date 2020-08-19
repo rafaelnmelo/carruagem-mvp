@@ -1,6 +1,6 @@
 import Foundation
-
-protocol GaragePresenterDelegate {
+// Herdar de AnyObject fará com que apenas classes possam ser criadas conforme este protocolo. Obs.: class está deprecated
+protocol GaragePresenterDelegate: AnyObject {
     func provideBrandContent(object: [CarBrand])
     func provideTemplateContent(object: [CarTemplate])
     func provideYearContent(object: [CarYear])
@@ -9,19 +9,23 @@ protocol GaragePresenterDelegate {
 
 class GaragePresenter {
     
-    let garageService = CarService()
-    var delegate: GaragePresenterDelegate?
+    let garageService: CarService
+    weak var delegate: GaragePresenterDelegate?
+    // weak em delegate evita memory leak pois evita retenção de ciclos
     
     func setViewDelegate(reference: GaragePresenterDelegate) {
         self.delegate = reference
     }
     
+    init(garageService: CarService) {
+        self.garageService = garageService
+    }
+    
     func getBrand() {
-        
-        let service = garageService
+
         var object = [CarBrand]()
         
-        service.getBrand { (response) in
+        garageService.getBrand { response in
             if let brandResponse = response {
                 if !brandResponse.codigo.isEmpty, !brandResponse.nome.isEmpty {
                     object.append(brandResponse)
@@ -32,11 +36,10 @@ class GaragePresenter {
     }
     
     func getTemplate() {
-        
-        let service = garageService
+
         var object = [CarTemplate]()
         
-        service.getTemplate { (response) in
+        garageService.getTemplate { response in
             if let templateResponse = response {
                 for template in templateResponse.modelos {
                     if template.codigo != 0, !template.nome.isEmpty {
@@ -50,11 +53,10 @@ class GaragePresenter {
     }
     
     func getYear() {
-        
-        let service = garageService
+
         var object = [CarYear]()
         
-        service.getYear { (response) in
+        garageService.getYear { response in
             if let yearResponse = response {
                 if !yearResponse.nome.isEmpty, !yearResponse.codigo.isEmpty{
                     object.append(yearResponse)
@@ -66,11 +68,10 @@ class GaragePresenter {
     }
     
     func getValue() {
-        
-        let service = garageService
+
         var object = [CarValue]()
         
-        service.getValue { (response) in
+        garageService.getValue { response in
             if let valueResponse = response {
                 if !valueResponse.Valor.isEmpty, !valueResponse.Marca.isEmpty, !valueResponse.Modelo.isEmpty, valueResponse.AnoModelo != 0, !valueResponse.Combustivel.isEmpty, !valueResponse.CodigoFipe.isEmpty, !valueResponse.MesReferencia.isEmpty, valueResponse.TipoVeiculo != 0, !valueResponse.SiglaCombustivel.isEmpty {
                     object.append(valueResponse)

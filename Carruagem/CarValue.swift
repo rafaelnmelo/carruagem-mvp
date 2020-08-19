@@ -1,5 +1,3 @@
-import UIKit
-
 struct CarValue: Codable {
     let Valor: String
     let Marca: String

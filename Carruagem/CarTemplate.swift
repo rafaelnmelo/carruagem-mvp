@@ -1,5 +1,3 @@
-import UIKit
-
 struct CarTemplate: Codable {
     let modelos: [CarModel]
 }
