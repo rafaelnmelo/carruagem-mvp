@@ -27,7 +27,7 @@ class GaragePresenter {
         
         garageService.getBrand { response in
             if let brandResponse = response {
-                if !brandResponse.codigo.isEmpty, !brandResponse.nome.isEmpty {
+                if !brandResponse.code.isEmpty, !brandResponse.name.isEmpty {
                     object.append(brandResponse)
                 }
             }
@@ -41,8 +41,8 @@ class GaragePresenter {
         
         garageService.getTemplate { response in
             if let templateResponse = response {
-                for template in templateResponse.modelos {
-                    if template.codigo != 0, !template.nome.isEmpty {
+                for template in templateResponse.model {
+                    if template.code.isEmpty, !template.name.isEmpty {
                         object.append(templateResponse)
                     }
                 }
@@ -58,7 +58,7 @@ class GaragePresenter {
         
         garageService.getYear { response in
             if let yearResponse = response {
-                if !yearResponse.nome.isEmpty, !yearResponse.codigo.isEmpty{
+                if !yearResponse.name.isEmpty, !yearResponse.code.isEmpty{
                     object.append(yearResponse)
                 }
             }
@@ -73,7 +73,7 @@ class GaragePresenter {
         
         garageService.getValue { response in
             if let valueResponse = response {
-                if !valueResponse.Valor.isEmpty, !valueResponse.Marca.isEmpty, !valueResponse.Modelo.isEmpty, valueResponse.AnoModelo != 0, !valueResponse.Combustivel.isEmpty, !valueResponse.CodigoFipe.isEmpty, !valueResponse.MesReferencia.isEmpty, valueResponse.TipoVeiculo != 0, !valueResponse.SiglaCombustivel.isEmpty {
+                if !valueResponse.value.isEmpty, !valueResponse.brand.isEmpty, !valueResponse.model.isEmpty, valueResponse.modelYear != 0, !valueResponse.fuel.isEmpty, !valueResponse.fipeCode.isEmpty, !valueResponse.referenceMonth.isEmpty, valueResponse.vehicleType != 0, !valueResponse.fuelInitials.isEmpty {
                     object.append(valueResponse)
                 }
             }
