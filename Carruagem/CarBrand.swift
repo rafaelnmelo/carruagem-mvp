@@ -1,4 +1,9 @@
 struct CarBrand: Codable {
-    let nome: String
-    let codigo: String
+    let name: String
+    let code: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "nome"
+        case code = "codigo"
+    }
 }

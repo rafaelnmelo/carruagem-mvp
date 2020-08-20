@@ -1,8 +1,17 @@
 struct CarTemplate: Codable {
-    let modelos: [CarModel]
+    let model: [CarModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case model = "modelos"
+    }
 }
 
 struct CarModel: Codable {
-    let nome: String
-    let codigo: Int
+    let name: String
+    let code: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "nome"
+        case code = "codigo"
+    }
 }
