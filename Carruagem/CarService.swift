@@ -1,19 +1,28 @@
 import Alamofire
+import Foundation
 
-class CarService {
-    
-    typealias AlamofireJSONCallback = (Result<Any>)->()
-    
-    enum AlamofireJSONClient {
+public enum ResponseError: Error {
+    case internetError
+    case decodeError
+    case dataNotFound
+}
+
+final class CarBrandService {
         
-        static func getAPICall(to endpoint: CarEndPoint, callback: @escaping AlamofireJSONCallback) {
-            AF.request(endpoint.url, method: endpoint.httpMethod, parameters: endpoint.parameters, encoding: endpoint.encoding).validate().responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    callback(Result.success(value))
-                case .failure(let error):
-                    callback(Result.failure(error))
+    func carBrandService(to endpoint: String, callback: @escaping (Result<CarTemplate>) -> Void ) {
+        
+        AF.request(endpoint).response { response in
+            print(response)
+            switch response.result {
+            case .success:
+                let decoder = JSONDecoder()
+                guard let jsonData = response.data, let _ = response.value, let carBrand = try?  decoder.decode(CarTemplate.self, from: jsonData) else {
+                    callback(.failure(.decodeError))
+                    return
                 }
+                callback(.success(carBrand))
+            case .failure:
+                callback(.failure(.dataNotFound))
             }
         }
     }

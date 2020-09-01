@@ -8,31 +8,29 @@ protocol GaragePresenterDelegate: AnyObject {
 
 class GaragePresenter {
     
-    let garageService: CarService
-    weak var delegate: GaragePresenterDelegate?
-    /// weak em delegate evita memory leak pois evita retenção de ciclos
+    private let garageService: CarBrandService
+    weak var delegate: GaragePresenterDelegate? /// weak em delegate evita memory leak pois evita retenção de ciclos
+    
     
     func setViewDelegate(reference: GaragePresenterDelegate) {
         self.delegate = reference
     }
     
-    init(garageService: CarService) {
+    init(garageService: CarBrandService = CarBrandService()) {
         self.garageService = garageService
     }
     
-//    func getBrand() {
-//
-//        var object = [CarBrand]()
-//        
-//        garageService.getBrand { response in
-//            if let brandResponse = response {
-//                if !brandResponse.code.isEmpty, !brandResponse.name.isEmpty {
-//                    object.append(brandResponse)
-//                }
-//            }
-//            self.delegate?.provideBrandContent(object: object)
-//        }
-//    }
+    func getCarTemplate(by code: String) {
+        self.garageService.carBrandService(to: Endpoint.fetchCarTemplate(code: code).rawValue) { response in
+            switch response{
+            case .success(let carBrand):
+                break
+            case .failure(let error):
+                break
+            }
+            
+        }
+    }
 //    
 //    func getTemplate() {
 //
