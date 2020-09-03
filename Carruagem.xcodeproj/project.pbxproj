@@ -12,19 +12,19 @@
 		75956B4E24E6C40400718AE6 /* GaragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75956B4D24E6C40400718AE6 /* GaragePresenter.swift */; };
 		75A15D8B24EEAEAF00BFCD91 /* CarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A15D8A24EEAEAF00BFCD91 /* CarEndpoint.swift */; };
 		75A15D8D24EEB01300BFCD91 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A15D8C24EEB01300BFCD91 /* Result.swift */; };
+		75AE7DAB2501310A0053E98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AE7DAA2501310A0053E98F /* Main.storyboard */; };
 		75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AC24E42429008C3D14 /* AppDelegate.swift */; };
 		75B355AF24E42429008C3D14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355AE24E42429008C3D14 /* SceneDelegate.swift */; };
 		75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355B024E42429008C3D14 /* GarageViewController.swift */; };
-		75B355B424E42429008C3D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B355B224E42429008C3D14 /* Main.storyboard */; };
 		75B355B624E4242A008C3D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B355B524E4242A008C3D14 /* Assets.xcassets */; };
 		75B355B924E4242A008C3D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B355B724E4242A008C3D14 /* LaunchScreen.storyboard */; };
 		75B355CC24E42877008C3D14 /* CarValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CB24E42877008C3D14 /* CarValue.swift */; };
 		75B355CE24E42893008C3D14 /* CarYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CD24E42893008C3D14 /* CarYear.swift */; };
 		75B355D024E428BE008C3D14 /* CarTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CF24E428BE008C3D14 /* CarTemplate.swift */; };
-		75B355D424E42901008C3D14 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355D324E42901008C3D14 /* CarService.swift */; };
-		75F0C49324E42C7100B8EED8 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49224E42C7100B8EED8 /* TemplateTableViewController.swift */; };
+		75B355D424E42901008C3D14 /* CarTemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355D324E42901008C3D14 /* CarTemplateService.swift */; };
+		75DF17E424FED04B002B26CD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF17E324FED04B002B26CD /* NetworkManager.swift */; };
 		75F0C49524E42CA100B8EED8 /* YearTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */; };
-		75F0C49724E42CBE00B8EED8 /* ValueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49624E42CBE00B8EED8 /* ValueTableViewController.swift */; };
+		75F0C49724E42CBE00B8EED8 /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49624E42CBE00B8EED8 /* ValueViewController.swift */; };
 		85A7D5523B836A60C5F05EA0 /* Pods_Carruagem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51592CC508B5C5F3E14BDB13 /* Pods_Carruagem.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,21 +36,21 @@
 		75956B4D24E6C40400718AE6 /* GaragePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePresenter.swift; sourceTree = "<group>"; };
 		75A15D8A24EEAEAF00BFCD91 /* CarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEndpoint.swift; sourceTree = "<group>"; };
 		75A15D8C24EEB01300BFCD91 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		75AE7DAA2501310A0053E98F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		75B355A924E42429008C3D14 /* Carruagem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carruagem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B355AC24E42429008C3D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75B355AE24E42429008C3D14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		75B355B024E42429008C3D14 /* GarageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageViewController.swift; sourceTree = "<group>"; };
-		75B355B324E42429008C3D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75B355B524E4242A008C3D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75B355B824E4242A008C3D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75B355BA24E4242A008C3D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75B355CB24E42877008C3D14 /* CarValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarValue.swift; sourceTree = "<group>"; };
 		75B355CD24E42893008C3D14 /* CarYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYear.swift; sourceTree = "<group>"; };
 		75B355CF24E428BE008C3D14 /* CarTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTemplate.swift; sourceTree = "<group>"; };
-		75B355D324E42901008C3D14 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
-		75F0C49224E42C7100B8EED8 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
+		75B355D324E42901008C3D14 /* CarTemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTemplateService.swift; sourceTree = "<group>"; };
+		75DF17E324FED04B002B26CD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewController.swift; sourceTree = "<group>"; };
-		75F0C49624E42CBE00B8EED8 /* ValueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableViewController.swift; sourceTree = "<group>"; };
+		75F0C49624E42CBE00B8EED8 /* ValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueViewController.swift; sourceTree = "<group>"; };
 		F08021228A275A0AC49A2AB3 /* Pods-Carruagem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carruagem.debug.xcconfig"; path = "Target Support Files/Pods-Carruagem/Pods-Carruagem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +128,8 @@
 		75B355C424E42751008C3D14 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				75B355D324E42901008C3D14 /* CarService.swift */,
+				75B355D324E42901008C3D14 /* CarTemplateService.swift */,
+				75DF17E324FED04B002B26CD /* NetworkManager.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -165,10 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				75B355B024E42429008C3D14 /* GarageViewController.swift */,
-				75F0C49224E42C7100B8EED8 /* TemplateTableViewController.swift */,
 				75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */,
-				75F0C49624E42CBE00B8EED8 /* ValueTableViewController.swift */,
-				75B355B224E42429008C3D14 /* Main.storyboard */,
+				75F0C49624E42CBE00B8EED8 /* ValueViewController.swift */,
+				75AE7DAA2501310A0053E98F /* Main.storyboard */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -261,8 +261,8 @@
 			files = (
 				75B355B924E4242A008C3D14 /* LaunchScreen.storyboard in Resources */,
 				75B355B624E4242A008C3D14 /* Assets.xcassets in Resources */,
-				75B355B424E42429008C3D14 /* Main.storyboard in Resources */,
 				75614A9824E5804C00A666FE /* GenericCell.xib in Resources */,
+				75AE7DAB2501310A0053E98F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +317,8 @@
 			files = (
 				75614A9624E5787700A666FE /* GenericCellTableViewCell.swift in Sources */,
 				75B355CC24E42877008C3D14 /* CarValue.swift in Sources */,
-				75B355D424E42901008C3D14 /* CarService.swift in Sources */,
+				75B355D424E42901008C3D14 /* CarTemplateService.swift in Sources */,
 				75B355CE24E42893008C3D14 /* CarYear.swift in Sources */,
-				75F0C49324E42C7100B8EED8 /* TemplateTableViewController.swift in Sources */,
 				75A15D8D24EEB01300BFCD91 /* Result.swift in Sources */,
 				75956B4E24E6C40400718AE6 /* GaragePresenter.swift in Sources */,
 				75A15D8B24EEAEAF00BFCD91 /* CarEndpoint.swift in Sources */,
@@ -327,7 +326,8 @@
 				75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */,
 				75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */,
 				75F0C49524E42CA100B8EED8 /* YearTableViewController.swift in Sources */,
-				75F0C49724E42CBE00B8EED8 /* ValueTableViewController.swift in Sources */,
+				75DF17E424FED04B002B26CD /* NetworkManager.swift in Sources */,
+				75F0C49724E42CBE00B8EED8 /* ValueViewController.swift in Sources */,
 				75B355AF24E42429008C3D14 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,14 +335,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		75B355B224E42429008C3D14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75B355B324E42429008C3D14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75B355B724E4242A008C3D14 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,7 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelnunes.Carruagem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,7 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelnunes.Carruagem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

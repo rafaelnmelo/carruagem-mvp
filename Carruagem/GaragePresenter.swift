@@ -1,6 +1,5 @@
 /// Herdar de AnyObject fará com que apenas classes possam ser criadas conforme este protocolo. Obs.: class está deprecated
 protocol GaragePresenterDelegate: AnyObject {
-    func provideBrandContent(object: [CarBrand])
     func provideTemplateContent(object: [CarTemplate])
     func provideYearContent(object: [CarYear])
     func provideValueContent(object: [CarValue])
@@ -8,7 +7,7 @@ protocol GaragePresenterDelegate: AnyObject {
 
 class GaragePresenter {
     
-    private let garageService: CarBrandService
+    private let garageService: CarTemplateService
     weak var delegate: GaragePresenterDelegate? /// weak em delegate evita memory leak pois evita retenção de ciclos
     
     
@@ -16,12 +15,12 @@ class GaragePresenter {
         self.delegate = reference
     }
     
-    init(garageService: CarBrandService = CarBrandService()) {
+    init(garageService: CarTemplateService = CarTemplateService()) {
         self.garageService = garageService
     }
     
     func getCarTemplate(by code: String) {
-        self.garageService.carBrandService(to: Endpoint.fetchCarTemplate(code: code).rawValue) { response in
+        self.garageService.carTemplateService(to: Endpoint.fetchCarTemplate(code: code).rawValue) { response in
             switch response{
             case .success(let carBrand):
                 break

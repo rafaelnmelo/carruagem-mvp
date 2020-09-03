@@ -7,12 +7,18 @@ public enum ResponseError: Error {
     case dataNotFound
 }
 
-final class CarBrandService {
+final class CarTemplateService {
+    
+    let networkManager: NetworkManagerProtocol
+    
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+        self.networkManager = networkManager
+    }
+    
+    
+    func carTemplateService(to endpoint: String, callback: @escaping (Result<CarTemplate>) -> Void ) {
         
-    func carBrandService(to endpoint: String, callback: @escaping (Result<CarTemplate>) -> Void ) {
-        
-        AF.request(endpoint).response { response in
-            print(response)
+        self.networkManager.getFromServer(by: endpoint) { response in
             switch response.result {
             case .success:
                 let decoder = JSONDecoder()

@@ -1,7 +1,7 @@
 import UIKit
 
-class TemplateTableViewController: UITableViewController {
-
+class ValueViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
