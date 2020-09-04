@@ -1,6 +1,6 @@
 import UIKit
 
-class GenericCellTableViewCell: UITableViewCell {
+class GenericCellTableViewCell: UITableViewCell, Reusable {
     
     @IBOutlet var detailImage: UIImageView!
     @IBOutlet var name: UILabel!
@@ -15,14 +15,17 @@ class GenericCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setTemplate(name: String, code: Int) {
-        self.name.text = name
-        self.code.text = "\(code)"
+}
+
+extension GenericCellTableViewCell {
+    struct Data {
+//        var detailImage: UIImageView!
+        var name: String?
+        var code: String?
     }
     
-    func setYear(name: String, code: String) {
-        self.name.text = name
-        self.code.text = code
+    func build(data: Data) {
+        self.name.text = data.name ?? "teste"
+        self.code.text = data.code ?? "codeteste"
     }
-    
 }

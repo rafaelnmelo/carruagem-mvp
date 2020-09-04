@@ -1,19 +1,14 @@
+import UIKit
 /// Herdar de AnyObject fará com que apenas classes possam ser criadas conforme este protocolo. Obs.: class está deprecated
 protocol GaragePresenterDelegate: AnyObject {
-    func provideTemplateContent(object: [CarTemplate])
-    func provideYearContent(object: [CarYear])
-    func provideValueContent(object: [CarValue])
+    func fetchSuccess()
 }
 
 class GaragePresenter {
     
     private let garageService: CarTemplateService
     weak var delegate: GaragePresenterDelegate? /// weak em delegate evita memory leak pois evita retenção de ciclos
-    
-    
-    func setViewDelegate(reference: GaragePresenterDelegate) {
-        self.delegate = reference
-    }
+    var carData = [CarData]()
     
     init(garageService: CarTemplateService = CarTemplateService()) {
         self.garageService = garageService
@@ -21,15 +16,41 @@ class GaragePresenter {
     
     func getCarTemplate(by code: String) {
         self.garageService.carTemplateService(to: Endpoint.fetchCarTemplate(code: code).rawValue) { response in
+            
             switch response{
-            case .success(let carBrand):
+            case .success(let carTemplate):
+                self.objectMapper(carTemplate: carTemplate)
+                self.delegate?.fetchSuccess()
                 break
-            case .failure(let error):
+            case .failure:
                 break
             }
             
         }
     }
+    
+    func objectMapper(carTemplate: CarTemplate) {
+        let carDataFilter = carTemplate.template.filter {
+            $0.name.isEmpty == false
+        }
+        for value in carDataFilter {
+            carData.append(value)
+        }
+    }
+    
+    func numberOfRows() -> Int{
+        return carData.count
+    }
+    
+    func cellForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
+        let data = GenericCellTableViewCell.Data(name: carData[indexPath.row].name, code: "\(carData[indexPath.row].code)")
+        return data
+    }
+    
+  }
+    
+    
+    
 //    
 //    func getTemplate() {
 //
@@ -77,4 +98,4 @@ class GaragePresenter {
 //        }
 //        
 //    }
-}
+

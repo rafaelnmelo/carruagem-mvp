@@ -15,13 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="lGt-ht-LBj" id="oUO-NL-Dvq"/>
-                            <outlet property="delegate" destination="lGt-ht-LBj" id="nbb-p7-vg1"/>
-                        </connections>
                     </tableView>
                     <connections>
-                        <outlet property="tableview" destination="4pv-Ik-t5R" id="ZMV-bc-RP0"/>
+                        <outlet property="tableView" destination="4pv-Ik-t5R" id="zxs-Hy-WGv"/>
                         <segue destination="52N-Te-cnJ" kind="show" identifier="YearTableViewController" customClass="YearTableViewController" customModule="Carruagem" customModuleProvider="target" id="q6U-ZB-ZHV"/>
                     </connections>
                 </tableViewController>

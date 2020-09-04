@@ -1,35 +1,62 @@
 import UIKit
 import Alamofire
 
-class GarageViewController: UITableViewController {
+class GarageViewController: UIViewController {
 
-    @IBOutlet var tableview: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
-    var template = [CarTemplate]()
+    private var presenter: GaragePresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupPresenter()
         getTemplate()
-        tableview.register(UINib(nibName: "GenericCellTableViewCell", bundle: nil), forCellReuseIdentifier: "templateCell")
     }
     
-    func getTemplate() {
-        let presenter = GaragePresenter()
-//        presenter.setViewDelegate(reference: self)
-        presenter.getCarTemplate(by: "59")
+    private func setupTableView() {
+        tableView.register(GenericCellTableViewCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return template.count
+    private func setupPresenter() {
+        presenter = GaragePresenter()
+        presenter?.delegate = self
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let templateCell = tableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? GenericCellTableViewCell {
-            templateCell.setTemplate(name: self.template[indexPath.row].name, code: self.template[indexPath.row].code)
-            return templateCell
+    private func getTemplate() {
+        presenter?.getCarTemplate(by: "59")
+    }
+}
+
+extension GarageViewController: GaragePresenterDelegate {
+    func fetchSuccess() {
+        tableView.reloadData() /// Realimentar a tableview com todos seus métodos
+    }
+}
+
+extension GarageViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 126
+    }
+}
+
+extension GarageViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter?.numberOfRows() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusable(GenericCellTableViewCell.self, for: indexPath)
+        if let data = presenter?.cellForRow(at: indexPath) {
+            cell.build(data: data)
         }
-        return UITableViewCell()
+        
+        return cell
     }
+    
+    
 }
     
 

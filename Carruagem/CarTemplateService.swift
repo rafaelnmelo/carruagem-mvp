@@ -22,11 +22,11 @@ final class CarTemplateService {
             switch response.result {
             case .success:
                 let decoder = JSONDecoder()
-                guard let jsonData = response.data, let _ = response.value, let carBrand = try?  decoder.decode(CarTemplate.self, from: jsonData) else {
+                guard let jsonData = response.data, let _ = response.value, let carTemplate = try?  decoder.decode(CarTemplate.self, from: jsonData) else {
                     callback(.failure(.decodeError))
                     return
                 }
-                callback(.success(carBrand))
+                callback(.success(carTemplate))
             case .failure:
                 callback(.failure(.dataNotFound))
             }
