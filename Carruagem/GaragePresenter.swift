@@ -8,18 +8,23 @@ class GaragePresenter {
     
     private let garageService: CarTemplateService
     weak var delegate: GaragePresenterDelegate? /// weak em delegate evita memory leak pois evita retenção de ciclos
+    
     var carData = [CarData]()
+    var manufactureYear = [ManufactureYear]()
+    var carDetail = [CarDetail]()
     
     init(garageService: CarTemplateService = CarTemplateService()) {
         self.garageService = garageService
     }
     
-    func getCarTemplate(by code: String) {
-        self.garageService.carTemplateService(to: Endpoint.fetchCarTemplate(code: code).rawValue) { response in
+//MARK: - Functions
+    
+    func getCarTemplate() {
+        self.garageService.carModelService(to: Endpoint.fetchCarModel.rawValue) { response in
             
             switch response{
-            case .success(let carTemplate):
-                self.objectMapper(carTemplate: carTemplate)
+            case .success(let carModel):
+                self.modelMapper(carModel: carModel)
                 self.delegate?.fetchSuccess()
                 break
             case .failure:
@@ -29,73 +34,88 @@ class GaragePresenter {
         }
     }
     
-    func objectMapper(carTemplate: CarTemplate) {
-        let carDataFilter = carTemplate.template.filter {
+    func getCarYear(by modelCode: String) {
+        self.garageService.carYearService(to: Endpoint.fetchCarYear(modelCode: modelCode).rawValue) { response in
+            
+            switch response{
+            case .success(let manufactureYear):
+                self.yearMapper(manufactureYear: manufactureYear)
+                self.delegate?.fetchSuccess()
+                break
+            case .failure:
+                break
+            }
+            
+        }
+    }
+    
+    func getCarDescription(by modelCode: String, yearCode: String) {
+        self.garageService.carDetailService(to: Endpoint.fetchCarDetail(modelCode: modelCode, yearCode: yearCode).rawValue) { response in
+            
+            switch response{
+            case .success(let carDetail):
+                self.detailMapper(carDetail: carDetail)
+                self.delegate?.fetchSuccess()
+                break
+            case .failure:
+                break
+            }
+            
+        }
+    }
+}
+
+//MARK: - ObjectMappers
+extension GaragePresenter {
+    
+    func modelMapper(carModel: CarModel) {
+        let carDataFilter = carModel.template.filter {
             $0.name.isEmpty == false
         }
         for value in carDataFilter {
-            carData.append(value)
+            self.carData.append(value)
         }
     }
     
-    func numberOfRows() -> Int{
+    func yearMapper(manufactureYear: ManufactureYear) {
+        self.manufactureYear.append(manufactureYear)
+    }
+    
+    func detailMapper(carDetail: CarDetail) {
+        self.carDetail.append(carDetail)
+    }
+}
+
+//MARK: - Cells Builders
+
+extension GaragePresenter {
+    
+    func numberOfModelsRows() -> Int{
         return carData.count
     }
     
-    func cellForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
-        let data = GenericCellTableViewCell.Data(name: carData[indexPath.row].name, code: "\(carData[indexPath.row].code)")
+    func modelForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
+        let data = GenericCellTableViewCell.Data(name: self.carData[indexPath.row].name, code: "\(carData[indexPath.row].code)")
         return data
     }
     
-  }
+    func numberOfYearRows() -> Int{
+        return carData.count
+    }
     
+    func yearForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
+        let data = GenericCellTableViewCell.Data(name: self.manufactureYear[indexPath.row].name, code: "\(manufactureYear[indexPath.row].code)")
+        return data
+    }
     
+    func numberOfDetailRows() -> Int{
+        return carData.count
+    }
     
-//    
-//    func getTemplate() {
-//
-//        var object = [CarTemplate]()
-//        
-//        garageService. { response in
-//            if let templateResponse = response {
-//                for template in templateResponse.model {
-//                    if template.code.isEmpty, !template.name.isEmpty {
-//                        object.append(templateResponse)
-//                    }
-//                }
-//            }
-//            self.delegate?.provideTemplateContent(object: object)
-//        }
-//        
+//    func detailForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
+//        let data = GenericCellTableViewCell.Data(name: self.carDetail[indexPath.row].name, code: "\(carDetail[indexPath.row].code)")
+//        return data
 //    }
-//    
-//    func getYear() {
-//
-//        var object = [CarYear]()
-//        
-//        garageService.getYear { response in
-//            if let yearResponse = response {
-//                if !yearResponse.name.isEmpty, !yearResponse.code.isEmpty{
-//                    object.append(yearResponse)
-//                }
-//            }
-//            self.delegate?.provideYearContent(object: object)
-//        }
-//        
-//    }
-//    
-//    func getValue() {
-//
-//        var object = [CarValue]()
-//        
-//        garageService.getValue { response in
-//            if let valueResponse = response {
-//                if !valueResponse.value.isEmpty, !valueResponse.brand.isEmpty, !valueResponse.model.isEmpty, valueResponse.modelYear != 0, !valueResponse.fuel.isEmpty, !valueResponse.fipeCode.isEmpty, !valueResponse.referenceMonth.isEmpty, valueResponse.vehicleType != 0, !valueResponse.fuelInitials.isEmpty {
-//                    object.append(valueResponse)
-//                }
-//            }
-//            self.delegate?.provideValueContent(object: object)
-//        }
-//        
-//    }
+    
+}
 

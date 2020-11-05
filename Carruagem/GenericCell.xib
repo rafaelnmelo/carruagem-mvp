@@ -15,20 +15,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-YI-XiF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-YI-XiF">
                         <rect key="frame" x="10" y="10" width="140" height="106"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="140" id="xa2-CX-QPB"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44j-Yg-Fpl">
-                        <rect key="frame" x="250" y="10" width="43" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44j-Yg-Fpl">
+                        <rect key="frame" x="158" y="10" width="246" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="código" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVo-1v-5Lp">
-                        <rect key="frame" x="250" y="95" width="53" height="21"/>
+                        <rect key="frame" x="158" y="95" width="246" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,10 +37,12 @@
                 <constraints>
                     <constraint firstItem="QdO-YI-XiF" firstAttribute="top" secondItem="hkc-PT-OO2" secondAttribute="top" constant="10" id="Guj-sb-esj"/>
                     <constraint firstItem="QdO-YI-XiF" firstAttribute="leading" secondItem="hkc-PT-OO2" secondAttribute="leading" constant="10" id="JaF-zU-nMr"/>
-                    <constraint firstItem="44j-Yg-Fpl" firstAttribute="leading" secondItem="QdO-YI-XiF" secondAttribute="trailing" constant="100" id="PVF-Gb-6QB"/>
+                    <constraint firstItem="44j-Yg-Fpl" firstAttribute="leading" secondItem="QdO-YI-XiF" secondAttribute="trailing" constant="8" id="PVF-Gb-6QB"/>
+                    <constraint firstAttribute="trailing" secondItem="44j-Yg-Fpl" secondAttribute="trailing" constant="10" id="PfB-gg-83m"/>
                     <constraint firstAttribute="bottom" secondItem="QdO-YI-XiF" secondAttribute="bottom" constant="10" id="R83-in-x2d"/>
                     <constraint firstItem="44j-Yg-Fpl" firstAttribute="top" secondItem="QdO-YI-XiF" secondAttribute="top" id="U6U-D9-wOb"/>
                     <constraint firstItem="QVo-1v-5Lp" firstAttribute="bottom" secondItem="QdO-YI-XiF" secondAttribute="bottom" id="dG2-qm-gM3"/>
+                    <constraint firstAttribute="trailing" secondItem="QVo-1v-5Lp" secondAttribute="trailing" constant="10" id="gcp-5P-W0u"/>
                     <constraint firstItem="QVo-1v-5Lp" firstAttribute="leading" secondItem="44j-Yg-Fpl" secondAttribute="leading" id="x4j-pq-a6G"/>
                 </constraints>
             </tableViewCellContentView>
@@ -52,4 +54,7 @@
             <point key="canvasLocation" x="79.710144927536234" y="-309.375"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="appstore" width="341.33334350585938" height="341.33334350585938"/>
+    </resources>
 </document>

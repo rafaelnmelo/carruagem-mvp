@@ -9,13 +9,14 @@ class GarageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
         setupPresenter()
         getTemplate()
     }
     
     private func setupTableView() {
-        tableView.register(GenericCellTableViewCell.self)
+        tableView.register(UINib(nibName: "GenericCell", bundle: nil), forCellReuseIdentifier: "GenericCellTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -26,7 +27,7 @@ class GarageViewController: UIViewController {
     }
     
     private func getTemplate() {
-        presenter?.getCarTemplate(by: "59")
+        presenter?.getCarTemplate()
     }
 }
 
@@ -44,19 +45,18 @@ extension GarageViewController: UITableViewDelegate{
 
 extension GarageViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.numberOfRows() ?? 0
+        return self.presenter?.numberOfModelsRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusable(GenericCellTableViewCell.self, for: indexPath)
-        if let data = presenter?.cellForRow(at: indexPath) {
-            cell.build(data: data)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "GenericCellTableViewCell", for: indexPath) as? GenericCellTableViewCell {
+            if let data = presenter?.modelForRow(at: indexPath) {
+                cell.build(data: data)
+                return cell
+            }
         }
-        
-        return cell
+        return UITableViewCell()
     }
-    
-    
 }
     
 

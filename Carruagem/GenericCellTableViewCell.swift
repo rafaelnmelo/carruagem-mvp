@@ -1,6 +1,6 @@
 import UIKit
 
-class GenericCellTableViewCell: UITableViewCell, Reusable {
+class GenericCellTableViewCell: UITableViewCell {
     
     @IBOutlet var detailImage: UIImageView!
     @IBOutlet var name: UILabel!
@@ -25,7 +25,7 @@ extension GenericCellTableViewCell {
     }
     
     func build(data: Data) {
-        self.name.text = data.name ?? "teste"
-        self.code.text = data.code ?? "codeteste"
+        self.name.text = data.name ?? ""
+        self.code.text = data.code ?? ""
     }
 }

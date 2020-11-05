@@ -1,4 +1,4 @@
-struct CarYear: Codable {
+struct ManufactureYear: Codable {
     let name: String
     let code: String
     

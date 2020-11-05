@@ -18,15 +18,13 @@
 		75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355B024E42429008C3D14 /* GarageViewController.swift */; };
 		75B355B624E4242A008C3D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B355B524E4242A008C3D14 /* Assets.xcassets */; };
 		75B355B924E4242A008C3D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B355B724E4242A008C3D14 /* LaunchScreen.storyboard */; };
-		75B355CC24E42877008C3D14 /* CarValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CB24E42877008C3D14 /* CarValue.swift */; };
-		75B355CE24E42893008C3D14 /* CarYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CD24E42893008C3D14 /* CarYear.swift */; };
-		75B355D024E428BE008C3D14 /* CarTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CF24E428BE008C3D14 /* CarTemplate.swift */; };
+		75B355CC24E42877008C3D14 /* CarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CB24E42877008C3D14 /* CarDetail.swift */; };
+		75B355CE24E42893008C3D14 /* ManufactureYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CD24E42893008C3D14 /* ManufactureYear.swift */; };
+		75B355D024E428BE008C3D14 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355CF24E428BE008C3D14 /* CarModel.swift */; };
 		75B355D424E42901008C3D14 /* CarTemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B355D324E42901008C3D14 /* CarTemplateService.swift */; };
 		75DF17E424FED04B002B26CD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF17E324FED04B002B26CD /* NetworkManager.swift */; };
 		75F0C49524E42CA100B8EED8 /* YearTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */; };
 		75F0C49724E42CBE00B8EED8 /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0C49624E42CBE00B8EED8 /* ValueViewController.swift */; };
-		75F54EDB250163A700D48503 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F54EDA250163A700D48503 /* Reusable.swift */; };
-		75F54EDE250163F900D48503 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F54EDD250163F900D48503 /* UITableView+Extension.swift */; };
 		85A7D5523B836A60C5F05EA0 /* Pods_Carruagem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51592CC508B5C5F3E14BDB13 /* Pods_Carruagem.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,15 +44,13 @@
 		75B355B524E4242A008C3D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75B355B824E4242A008C3D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75B355BA24E4242A008C3D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75B355CB24E42877008C3D14 /* CarValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarValue.swift; sourceTree = "<group>"; };
-		75B355CD24E42893008C3D14 /* CarYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYear.swift; sourceTree = "<group>"; };
-		75B355CF24E428BE008C3D14 /* CarTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTemplate.swift; sourceTree = "<group>"; };
+		75B355CB24E42877008C3D14 /* CarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetail.swift; sourceTree = "<group>"; };
+		75B355CD24E42893008C3D14 /* ManufactureYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufactureYear.swift; sourceTree = "<group>"; };
+		75B355CF24E428BE008C3D14 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		75B355D324E42901008C3D14 /* CarTemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTemplateService.swift; sourceTree = "<group>"; };
 		75DF17E324FED04B002B26CD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewController.swift; sourceTree = "<group>"; };
 		75F0C49624E42CBE00B8EED8 /* ValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueViewController.swift; sourceTree = "<group>"; };
-		75F54EDA250163A700D48503 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		75F54EDD250163F900D48503 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		F08021228A275A0AC49A2AB3 /* Pods-Carruagem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carruagem.debug.xcconfig"; path = "Target Support Files/Pods-Carruagem/Pods-Carruagem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				75B355C024E42468008C3D14 /* AppStart */,
-				75F54ED82501637800D48503 /* Helper */,
 				75B355C124E4249B008C3D14 /* Assets */,
 				75B355C524E42765008C3D14 /* Home */,
 				75B355C324E4274A008C3D14 /* Model */,
@@ -123,9 +118,9 @@
 		75B355C324E4274A008C3D14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				75B355CF24E428BE008C3D14 /* CarTemplate.swift */,
-				75B355CD24E42893008C3D14 /* CarYear.swift */,
-				75B355CB24E42877008C3D14 /* CarValue.swift */,
+				75B355CF24E428BE008C3D14 /* CarModel.swift */,
+				75B355CD24E42893008C3D14 /* ManufactureYear.swift */,
+				75B355CB24E42877008C3D14 /* CarDetail.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -185,31 +180,6 @@
 				75614A9724E5804C00A666FE /* GenericCell.xib */,
 			);
 			name = Cell;
-			sourceTree = "<group>";
-		};
-		75F54ED82501637800D48503 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				75F54EDC250163DC00D48503 /* Extensions */,
-				75F54ED92501639200D48503 /* Protocols */,
-			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
-		75F54ED92501639200D48503 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				75F54EDA250163A700D48503 /* Reusable.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		75F54EDC250163DC00D48503 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				75F54EDD250163F900D48503 /* UITableView+Extension.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		A4CF76C003A2D1BDF1BA8D68 /* Pods */ = {
@@ -346,21 +316,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				75614A9624E5787700A666FE /* GenericCellTableViewCell.swift in Sources */,
-				75B355CC24E42877008C3D14 /* CarValue.swift in Sources */,
+				75B355CC24E42877008C3D14 /* CarDetail.swift in Sources */,
 				75B355D424E42901008C3D14 /* CarTemplateService.swift in Sources */,
-				75B355CE24E42893008C3D14 /* CarYear.swift in Sources */,
+				75B355CE24E42893008C3D14 /* ManufactureYear.swift in Sources */,
 				75A15D8D24EEB01300BFCD91 /* Result.swift in Sources */,
 				75956B4E24E6C40400718AE6 /* GaragePresenter.swift in Sources */,
 				75A15D8B24EEAEAF00BFCD91 /* CarEndpoint.swift in Sources */,
-				75B355D024E428BE008C3D14 /* CarTemplate.swift in Sources */,
+				75B355D024E428BE008C3D14 /* CarModel.swift in Sources */,
 				75B355B124E42429008C3D14 /* GarageViewController.swift in Sources */,
-				75F54EDB250163A700D48503 /* Reusable.swift in Sources */,
 				75B355AD24E42429008C3D14 /* AppDelegate.swift in Sources */,
 				75F0C49524E42CA100B8EED8 /* YearTableViewController.swift in Sources */,
 				75DF17E424FED04B002B26CD /* NetworkManager.swift in Sources */,
 				75F0C49724E42CBE00B8EED8 /* ValueViewController.swift in Sources */,
 				75B355AF24E42429008C3D14 /* SceneDelegate.swift in Sources */,
-				75F54EDE250163F900D48503 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

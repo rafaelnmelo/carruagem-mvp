@@ -18,12 +18,18 @@ import Alamofire
 //}
 
 public enum Endpoint {
-    case fetchCarTemplate(code: String)
+    case fetchCarModel
+    case fetchCarYear(modelCode: String)
+    case fetchCarDetail(modelCode: String, yearCode: String)
     
     var rawValue: String {
         switch self {
-        case let .fetchCarTemplate(code):
-            return BaseURL.domain + "/\(code)/modelos"
+        case .fetchCarModel:
+            return BaseURL.domain + "/59/modelos"
+        case let .fetchCarYear(modelCode):
+            return BaseURL.domain + "/59/modelos/\(modelCode)/anos"
+        case let .fetchCarDetail(modelCode, yearCode):
+            return BaseURL.domain + "/59)/modelos/\(modelCode)/anos/\(yearCode)"
         }
     }
 }
