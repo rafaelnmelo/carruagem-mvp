@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Modelos-->
+        <!--GarageViewController-->
         <scene sceneID="OOT-5d-Ygq">
             <objects>
-                <tableViewController id="lGt-ht-LBj" customClass="GarageViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="GarageViewController" storyboardIdentifier="GarageViewController" title="GarageViewController" id="lGt-ht-LBj" customClass="GarageViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4pv-Ik-t5R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1163.768115942029" y="-21.428571428571427"/>
         </scene>
-        <!--Fabricação-->
+        <!--YearTableViewController-->
         <scene sceneID="YMb-d5-kB1">
             <objects>
-                <tableViewController storyboardIdentifier="YearTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="52N-Te-cnJ" customClass="YearTableViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="YearTableViewController" storyboardIdentifier="YearTableViewController" title="YearTableViewController" id="52N-Te-cnJ" customClass="YearTableViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fe4-ck-lJJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="1989.8550724637682" y="-21.428571428571427"/>
         </scene>
-        <!--Detalhes-->
+        <!--ValueViewController-->
         <scene sceneID="3dy-tG-qwL">
             <objects>
-                <viewController storyboardIdentifier="ValueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3WQ-nN-Mle" customClass="ValueViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ValueViewController" title="ValueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3WQ-nN-Mle" customClass="ValueViewController" customModule="Carruagem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zC5-Jk-7Mg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
