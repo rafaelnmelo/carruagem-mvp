@@ -100,7 +100,7 @@ extension GaragePresenter {
     }
     
     func numberOfYearRows() -> Int{
-        return carData.count
+        return manufactureYear.count
     }
     
     func yearForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
@@ -109,7 +109,7 @@ extension GaragePresenter {
     }
     
     func numberOfDetailRows() -> Int{
-        return carData.count
+        return carDetail.count
     }
     
 //    func detailForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{

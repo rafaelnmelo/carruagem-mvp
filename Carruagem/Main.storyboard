@@ -35,13 +35,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
-                            <outlet property="dataSource" destination="52N-Te-cnJ" id="4V0-xE-DBM"/>
-                            <outlet property="delegate" destination="52N-Te-cnJ" id="PZy-Vy-0ur"/>
+                            <outlet property="dataSource" destination="52N-Te-cnJ" id="mrn-fv-Qjy"/>
+                            <outlet property="delegate" destination="52N-Te-cnJ" id="AgB-7g-PlI"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fabricação" id="SmU-3P-mXY"/>
                     <connections>
-                        <outlet property="tableview" destination="fe4-ck-lJJ" id="kxJ-m3-kho"/>
+                        <outlet property="tableview" destination="fe4-ck-lJJ" id="RrB-qg-a5A"/>
                         <segue destination="3WQ-nN-Mle" kind="show" identifier="ValueViewController" customClass="ValueViewController" customModule="Carruagem" customModuleProvider="target" id="zvo-dC-hMh"/>
                     </connections>
                 </tableViewController>
