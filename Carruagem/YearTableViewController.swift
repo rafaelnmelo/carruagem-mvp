@@ -11,8 +11,13 @@ class YearTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         setupPresenter()
         setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         if let year = manufactureYear {
             getYear(by: year)
         }

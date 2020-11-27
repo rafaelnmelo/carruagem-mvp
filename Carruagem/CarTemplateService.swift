@@ -33,13 +33,13 @@ final class CarTemplateService {
         }
     }
     
-    func carYearService(to endpoint: String, callback: @escaping (Result<ManufactureYear>) -> Void ) {
+    func carYearService(to endpoint: String, callback: @escaping (Result<[ManufactureYear]>) -> Void ) {
         
         self.networkManager.getFromServer(by: endpoint) { response in
             switch response.result {
             case .success:
                 let decoder = JSONDecoder()
-                guard let jsonData = response.data, let _ = response.value, let manufactureYear = try?  decoder.decode(ManufactureYear.self, from: jsonData) else {
+                guard let jsonData = response.data, let _ = response.value, let manufactureYear = try?  decoder.decode([ManufactureYear].self, from: jsonData) else {
                     callback(.failure(.decodeError))
                     return
                 }

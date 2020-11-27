@@ -77,8 +77,8 @@ extension GaragePresenter {
         }
     }
     
-    func yearMapper(manufactureYear: ManufactureYear) {
-        self.manufactureYear.append(manufactureYear)
+    func yearMapper(manufactureYear: [ManufactureYear]) {
+        self.manufactureYear = manufactureYear
     }
     
     func detailMapper(carDetail: CarDetail) {
