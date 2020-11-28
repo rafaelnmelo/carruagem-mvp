@@ -15,6 +15,7 @@ class CarDetailViewController: UIViewController {
     
     var carModel: String?
     var manufactureYear: String?
+    var carImage: UIImage?
     var cars = ["car0", "car1", "car2", "car3", "car4", "car5", "car6", "car7", "car8", "car9"]
     
     private var presenter: GaragePresenter?
@@ -28,7 +29,7 @@ class CarDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         buildDetails()
-        buildCarsImages()
+        buildCarImage()
     }
     
     private func setupPresenter() {
@@ -48,10 +49,9 @@ class CarDetailViewController: UIViewController {
         }
     }
     
-    func buildCarsImages() {
-        if let carImage = cars.randomElement() {
-            let bundlePath = Bundle.main.path(forResource: carImage, ofType: "jpg")
-            detailImage.image = UIImage(contentsOfFile: bundlePath ?? "car0")
+    func buildCarImage() {
+        if let carImage = self.carImage {
+            detailImage.image = carImage
         }
     }
 }

@@ -60,10 +60,15 @@ extension GarageViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let yearTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YearTableViewController") as? YearTableViewController {
-            if let data = presenter?.modelForRow(at: indexPath) {
-                yearTableView.carModel = data.code
+            if let cell = tableView.cellForRow(at: indexPath) as? GenericCellTableViewCell {
+                yearTableView.carModel = cell.code.text
+                yearTableView.carImage = cell.detailImage.image
                 navigationController?.pushViewController(yearTableView, animated: true)
             }
+//            if let data = presenter?.modelForRow(at: indexPath) {
+//                yearTableView.carModel = data.code
+//                navigationController?.pushViewController(yearTableView, animated: true)
+//            }
         }
     }
 }

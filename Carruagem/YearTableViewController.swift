@@ -7,6 +7,7 @@ class YearTableViewController: UITableViewController {
     
     private var presenter: GaragePresenter?
     var carModel: String?
+    var carImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ extension YearTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GenericCellTableViewCell", for: indexPath) as? GenericCellTableViewCell {
             if let data = presenter?.yearForRow(at: indexPath) {
+                cell.detailImage.image = carImage
                 cell.build(data: data)
                 return cell
             }
@@ -68,7 +70,8 @@ extension YearTableViewController {
         if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarDetailViewController") as? CarDetailViewController {
             if let data = presenter?.yearForRow(at: indexPath) {
                 detailVC.carModel = self.carModel
-                detailVC.manufactureYear = data.code                    
+                detailVC.manufactureYear = data.code
+                detailVC.carImage = self.carImage
                 navigationController?.pushViewController(detailVC, animated: true)
             }
         }

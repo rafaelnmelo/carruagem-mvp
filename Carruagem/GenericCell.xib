@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-YI-XiF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-YI-XiF">
                         <rect key="frame" x="10" y="10" width="140" height="106"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="140" id="xa2-CX-QPB"/>
@@ -54,7 +54,4 @@
             <point key="canvasLocation" x="79.710144927536234" y="-309.375"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="appstore" width="341.33334350585938" height="341.33334350585938"/>
-    </resources>
 </document>

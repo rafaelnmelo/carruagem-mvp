@@ -12,6 +12,7 @@ class GaragePresenter {
     var carData = [CarData]()
     var manufactureYear = [ManufactureYear]()
     var carDetail: CarDetail?
+    var carImages = ["car0", "car1", "car2", "car3", "car4", "car5", "car6", "car7", "car8", "car9"]
     
     init(garageService: CarTemplateService = CarTemplateService()) {
         self.garageService = garageService
@@ -63,6 +64,13 @@ class GaragePresenter {
         }
 
     }
+    
+    func getCarImage() -> String {
+        if let carImage = self.carImages.randomElement() {
+            return carImage
+        }
+        return "car0"
+    }
 }
 
 //MARK: - ObjectMappers
@@ -95,7 +103,7 @@ extension GaragePresenter {
     }
     
     func modelForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
-        let data = GenericCellTableViewCell.Data(name: self.carData[indexPath.row].name, code: "\(carData[indexPath.row].code)")
+        let data = GenericCellTableViewCell.Data(name: self.carData[indexPath.row].name, code: "\(carData[indexPath.row].code)", image: self.getCarImage())
         return data
     }
     
