@@ -29,7 +29,7 @@ public enum Endpoint {
         case let .fetchCarYear(modelCode):
             return BaseURL.domain + "/59/modelos/\(modelCode)/anos"
         case let .fetchCarDetail(modelCode, yearCode):
-            return BaseURL.domain + "/59)/modelos/\(modelCode)/anos/\(yearCode)"
+            return BaseURL.domain + "/59/modelos/\(modelCode)/anos/\(yearCode)"
         }
     }
 }

@@ -6,20 +6,18 @@ class YearTableViewController: UITableViewController {
     @IBOutlet var tableview: UITableView!
     
     private var presenter: GaragePresenter?
-    var manufactureYear: String?
+    var carModel: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
         setupPresenter()
         setupTableView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        if let year = manufactureYear {
-            getYear(by: year)
+    override func viewWillAppear(_ animated: Bool) {
+        if let model = carModel {
+            getYear(by: model)
         }
     }
     
@@ -67,5 +65,12 @@ extension YearTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarDetailViewController") as? CarDetailViewController {
+            if let data = presenter?.yearForRow(at: indexPath) {
+                detailVC.carModel = self.carModel
+                detailVC.manufactureYear = data.code                    
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
     }
 }

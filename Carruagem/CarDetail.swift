@@ -18,6 +18,6 @@ struct CarDetail: Codable {
             case fipeCode = "CodigoFipe"
             case referenceMonth = "MesReferencia"
             case vehicleType = "TipoVeiculo"
-            case fuelInitials = "Siglaombustivel"
+            case fuelInitials = "SiglaCombustivel"
     }
 }

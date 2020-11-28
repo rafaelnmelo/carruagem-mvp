@@ -11,7 +11,7 @@ class GaragePresenter {
     
     var carData = [CarData]()
     var manufactureYear = [ManufactureYear]()
-    var carDetail = [CarDetail]()
+    var carDetail: CarDetail?
     
     init(garageService: CarTemplateService = CarTemplateService()) {
         self.garageService = garageService
@@ -60,8 +60,8 @@ class GaragePresenter {
             case .failure:
                 break
             }
-            
         }
+
     }
 }
 
@@ -82,7 +82,7 @@ extension GaragePresenter {
     }
     
     func detailMapper(carDetail: CarDetail) {
-        self.carDetail.append(carDetail)
+        self.carDetail = carDetail
     }
 }
 
@@ -108,14 +108,10 @@ extension GaragePresenter {
         return data
     }
     
-    func numberOfDetailRows() -> Int{
-        return carDetail.count
+    func getCarDetail() -> CarDetailViewController.Data {
+        let data = CarDetailViewController.Data(value: self.carDetail?.value, brand: self.carDetail?.brand, model: self.carDetail?.model, modelYear: self.carDetail?.modelYear, fuel: self.carDetail?.fuel, fipeCode: self.carDetail?.fipeCode, referenceMonth: self.carDetail?.referenceMonth, vehicleType: self.carDetail?.vehicleType, fuelInitials: self.carDetail?.fuelInitials)
+        return data
     }
-    
-//    func detailForRow(at indexPath: IndexPath) -> GenericCellTableViewCell.Data{
-//        let data = GenericCellTableViewCell.Data(name: self.carDetail[indexPath.row].name, code: "\(carDetail[indexPath.row].code)")
-//        return data
-//    }
     
 }
 

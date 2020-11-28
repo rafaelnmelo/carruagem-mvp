@@ -62,8 +62,8 @@
             filePath = "Carruagem/YearTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Carruagem/YearTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -87,49 +87,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3017E95C-5EF2-4CC5-AD63-7EC864198383"
+            uuid = "B0A6D17A-B9B4-49B7-BA38-909068F9193F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carruagem/GenericCellTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "buildCarsImages()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC7B832F-57F7-49E0-8F6C-67A55D7469F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Carruagem/CarTemplateService.swift"
+            filePath = "Carruagem/CarDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "carYearService(to:callback:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getCarDescription()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3017E95C-5EF2-4CC5-AD63-7EC864198383 - 43c6fd710c93a0ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Carruagem.CarTemplateService.carYearService(to: Swift.String, callback: (Carruagem.Result&lt;Swift.Array&lt;Carruagem.ManufactureYear&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Carruagem"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rafaelnunes/Documents/iOS-Dev/Carruagem/Carruagem/CarTemplateService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "3017E95C-5EF2-4CC5-AD63-7EC864198383 - 8260d8c0b9d4de0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in Carruagem.CarTemplateService.carYearService(to: Swift.String, callback: (Carruagem.Result&lt;Swift.Array&lt;Carruagem.ManufactureYear&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Carruagem"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rafaelnunes/Documents/iOS-Dev/Carruagem/Carruagem/CarTemplateService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "204">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "923190E2-16A0-4B9E-88EE-215C7C0188BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carruagem/CarDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "fetchSuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D154FFD1-FDC1-4B9D-9C21-07B6E07CBDA8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Carruagem/GaragePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getCarDescription(by:yearCode:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
