@@ -8,7 +8,7 @@ protocol NetworkManagerProtocol {
 class NetworkManager: NetworkManagerProtocol {
     
     public static var shared: NetworkManagerProtocol = NetworkManager()
-
+    
     func getFromServer(by endpoint: String, callback: @escaping (_ response: AFDataResponse<Data?>) -> Void) {
         
         AF.request(endpoint).response { response in

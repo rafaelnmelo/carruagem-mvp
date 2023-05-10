@@ -2,7 +2,15 @@ import UIKit
 import Alamofire
 
 class YearTableViewController: UITableViewController {
-
+    
+    lazy var backgroundImage: UIImageView = {
+       let image = UIImageView()
+        image.image = UIImage(named: "yearBackground")
+        image.contentMode = .scaleToFill
+        image.alpha = 0.4
+        return image
+    }()
+    
     @IBOutlet var tableview: UITableView!
     
     private var presenter: GaragePresenter?
@@ -11,7 +19,6 @@ class YearTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         setupPresenter()
         setupTableView()
     }
@@ -23,6 +30,7 @@ class YearTableViewController: UITableViewController {
     }
     
     private func setupTableView() {
+        tableview.backgroundView = backgroundImage
         tableview.register(UINib(nibName: "GenericCell", bundle: nil), forCellReuseIdentifier: "GenericCellTableViewCell")
         tableview.delegate = self
         tableview.dataSource = self
@@ -48,9 +56,7 @@ extension YearTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 126
     }
-}
-
-extension YearTableViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.presenter?.numberOfYearRows() ?? 0
     }
@@ -58,7 +64,6 @@ extension YearTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GenericCellTableViewCell", for: indexPath) as? GenericCellTableViewCell {
             if let data = presenter?.yearForRow(at: indexPath) {
-                cell.detailImage.image = carImage
                 cell.build(data: data)
                 return cell
             }

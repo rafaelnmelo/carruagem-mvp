@@ -2,21 +2,31 @@ import UIKit
 import Alamofire
 
 class GarageViewController: UIViewController {
-
+    
+    lazy var backgroundImage: UIImageView = {
+       let image = UIImageView()
+        image.image = UIImage(named: "garageBackground")
+        image.contentMode = .scaleToFill
+        image.alpha = 0.4
+        return image
+    }()
+    
     @IBOutlet private var tableView: UITableView!
     
     private var presenter: GaragePresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
         setupPresenter()
         getTemplate()
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: "GenericCell", bundle: nil), forCellReuseIdentifier: "GenericCellTableViewCell")
+        tableView.backgroundView = backgroundImage
+        tableView.register(UINib(nibName: "GenericCell", bundle: nil),
+                           forCellReuseIdentifier: "GenericCellTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -41,9 +51,19 @@ extension GarageViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 126
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let yearTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YearTableViewController") as? YearTableViewController {
+            if let cell = tableView.cellForRow(at: indexPath) as? GenericCellTableViewCell {
+                yearTableView.carModel = cell.code.text
+                yearTableView.carImage = cell.detailImage.image
+                navigationController?.pushViewController(yearTableView, animated: true)
+            }
+        }
+    }
 }
 
-extension GarageViewController: UITableViewDataSource{
+extension GarageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.presenter?.numberOfModelsRows() ?? 0
     }
@@ -57,21 +77,4 @@ extension GarageViewController: UITableViewDataSource{
         }
         return UITableViewCell()
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let yearTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YearTableViewController") as? YearTableViewController {
-            if let cell = tableView.cellForRow(at: indexPath) as? GenericCellTableViewCell {
-                yearTableView.carModel = cell.code.text
-                yearTableView.carImage = cell.detailImage.image
-                navigationController?.pushViewController(yearTableView, animated: true)
-            }
-//            if let data = presenter?.modelForRow(at: indexPath) {
-//                yearTableView.carModel = data.code
-//                navigationController?.pushViewController(yearTableView, animated: true)
-//            }
-        }
-    }
 }
-    
-
-

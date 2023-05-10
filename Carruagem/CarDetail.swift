@@ -10,14 +10,14 @@ struct CarDetail: Codable {
     let fuelInitials: String
     
     private enum CodingKeys: String, CodingKey {
-            case value = "Valor"
-            case brand = "Marca"
-            case model = "Modelo"
-            case modelYear = "AnoModelo"
-            case fuel = "Combustivel"
-            case fipeCode = "CodigoFipe"
-            case referenceMonth = "MesReferencia"
-            case vehicleType = "TipoVeiculo"
-            case fuelInitials = "SiglaCombustivel"
+        case value = "Valor"
+        case brand = "Marca"
+        case model = "Modelo"
+        case modelYear = "AnoModelo"
+        case fuel = "Combustivel"
+        case fipeCode = "CodigoFipe"
+        case referenceMonth = "MesReferencia"
+        case vehicleType = "TipoVeiculo"
+        case fuelInitials = "SiglaCombustivel"
     }
 }

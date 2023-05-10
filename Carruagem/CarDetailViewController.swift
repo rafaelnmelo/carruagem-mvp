@@ -2,6 +2,7 @@ import UIKit
 
 class CarDetailViewController: UIViewController {
     
+    @IBOutlet var detailsView: UIView!
     @IBOutlet var value: UILabel!
     @IBOutlet var brand: UILabel!
     @IBOutlet var model: UILabel!
@@ -22,7 +23,8 @@ class CarDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.barTintColor = .clear
         setupPresenter()
         getCarDescription()
     }
@@ -45,41 +47,43 @@ class CarDetailViewController: UIViewController {
     
     private func buildDetails() {
         if let data = self.presenter?.getCarDetail() {
-            self.build(data: data)
+            build(data: data)
+            detailsView.layer.cornerRadius = detailsView.frame.height/16
         }
     }
     
     func buildCarImage() {
         if let carImage = self.carImage {
             detailImage.image = carImage
+            detailImage.layer.cornerRadius = detailImage.frame.height/4
         }
     }
 }
 
 extension CarDetailViewController {
-        struct Data {
-            var value: String?
-            var brand: String?
-            var model: String?
-            var modelYear: Int?
-            var fuel: String?
-            var fipeCode: String?
-            var referenceMonth: String?
-            var vehicleType: Int?
-            var fuelInitials: String?
-        }
-        
-        func build(data: Data) {
-            self.value.text = data.value ?? ""
-            self.brand.text = data.brand ?? ""
-            self.model.text = data.model ?? ""
-            self.modelyear.text = data.modelYear?.description ?? ""
-            self.fuel.text = data.fuel ?? ""
-            self.fipeCode.text = data.fipeCode ?? ""
-            self.referenceMonth.text = data.referenceMonth ?? ""
-            self.vehicleType.text = data.vehicleType?.description ?? ""
-            self.fuelInitials.text = data.brand ?? ""
-        }
+    struct Data {
+        var value: String?
+        var brand: String?
+        var model: String?
+        var modelYear: Int?
+        var fuel: String?
+        var fipeCode: String?
+        var referenceMonth: String?
+        var vehicleType: Int?
+        var fuelInitials: String?
+    }
+    
+    func build(data: Data) {
+        self.value.text = data.value ?? ""
+        self.brand.text = data.brand ?? ""
+        self.model.text = data.model ?? ""
+        self.modelyear.text = data.modelYear?.description ?? ""
+        self.fuel.text = data.fuel ?? ""
+        self.fipeCode.text = data.fipeCode ?? ""
+        self.referenceMonth.text = data.referenceMonth ?? ""
+        self.vehicleType.text = data.vehicleType?.description ?? ""
+        self.fuelInitials.text = data.brand ?? ""
+    }
 }
 
 extension CarDetailViewController: GaragePresenterDelegate {
