@@ -125,10 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				75B355C024E42468008C3D14 /* AppStart */,
-				75B355C124E4249B008C3D14 /* Assets */,
-				75B355C524E42765008C3D14 /* Home */,
-				75B355C324E4274A008C3D14 /* Model */,
-				75B355C424E42751008C3D14 /* Service */,
+				8DBC29E12C4025B000A319D6 /* Constants */,
+				75B355C524E42765008C3D14 /* Controllers */,
+				75B355C324E4274A008C3D14 /* Models */,
+				75B355C124E4249B008C3D14 /* Resources */,
+				75B355C424E42751008C3D14 /* Services */,
+				8DBC29DE2C40252600A319D6 /* Views */,
 				75B355BA24E4242A008C3D14 /* Info.plist */,
 			);
 			path = Carruagem;
@@ -144,80 +146,94 @@
 			name = AppStart;
 			sourceTree = "<group>";
 		};
-		75B355C124E4249B008C3D14 /* Assets */ = {
+		75B355C124E4249B008C3D14 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				751ED46925717E08002CE1A0 /* Images */,
 				75B355B524E4242A008C3D14 /* Assets.xcassets */,
 			);
-			name = Assets;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		75B355C324E4274A008C3D14 /* Model */ = {
+		75B355C324E4274A008C3D14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				75B355CF24E428BE008C3D14 /* CarModel.swift */,
 				75B355CD24E42893008C3D14 /* ManufactureYear.swift */,
 				75B355CB24E42877008C3D14 /* CarDetail.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		75B355C424E42751008C3D14 /* Service */ = {
+		75B355C424E42751008C3D14 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				75B355D324E42901008C3D14 /* CarTemplateService.swift */,
 				75DF17E324FED04B002B26CD /* NetworkManager.swift */,
 			);
-			name = Service;
+			name = Services;
 			sourceTree = "<group>";
 		};
-		75B355C524E42765008C3D14 /* Home */ = {
+		75B355C524E42765008C3D14 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				75B355C724E427F7008C3D14 /* View */,
-				75B355C624E4276A008C3D14 /* Presenter */,
-			);
-			name = Home;
-			sourceTree = "<group>";
-		};
-		75B355C624E4276A008C3D14 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				75956B4D24E6C40400718AE6 /* GaragePresenter.swift */,
-				75A15D8A24EEAEAF00BFCD91 /* CarEndpoint.swift */,
-				75A15D8C24EEB01300BFCD91 /* Result.swift */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		75B355C724E427F7008C3D14 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				75B355CA24E4281D008C3D14 /* Cell */,
-				75B355C824E4280C008C3D14 /* ViewController */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		75B355C824E4280C008C3D14 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				75B355B024E42429008C3D14 /* GarageViewController.swift */,
-				75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */,
-				75F0C49624E42CBE00B8EED8 /* CarDetailViewController.swift */,
 				75AE7DAA2501310A0053E98F /* Main.storyboard */,
+				8DBC29DF2C40256100A319D6 /* Garage */,
+				8DBC29E02C40258300A319D6 /* Year */,
+				75B355C824E4280C008C3D14 /* CarDetail */,
 			);
-			name = ViewController;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		75B355CA24E4281D008C3D14 /* Cell */ = {
+		75B355C824E4280C008C3D14 /* CarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				75F0C49624E42CBE00B8EED8 /* CarDetailViewController.swift */,
+			);
+			name = CarDetail;
+			sourceTree = "<group>";
+		};
+		75B355CA24E4281D008C3D14 /* GenericCell */ = {
 			isa = PBXGroup;
 			children = (
 				75614A9524E5787700A666FE /* GenericCellTableViewCell.swift */,
 				75614A9724E5804C00A666FE /* GenericCell.xib */,
 			);
-			name = Cell;
+			name = GenericCell;
+			sourceTree = "<group>";
+		};
+		8DBC29DE2C40252600A319D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75B355CA24E4281D008C3D14 /* GenericCell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8DBC29DF2C40256100A319D6 /* Garage */ = {
+			isa = PBXGroup;
+			children = (
+				75B355B024E42429008C3D14 /* GarageViewController.swift */,
+				75956B4D24E6C40400718AE6 /* GaragePresenter.swift */,
+			);
+			name = Garage;
+			sourceTree = "<group>";
+		};
+		8DBC29E02C40258300A319D6 /* Year */ = {
+			isa = PBXGroup;
+			children = (
+				75F0C49424E42CA100B8EED8 /* YearTableViewController.swift */,
+			);
+			name = Year;
+			sourceTree = "<group>";
+		};
+		8DBC29E12C4025B000A319D6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				75A15D8A24EEAEAF00BFCD91 /* CarEndpoint.swift */,
+				75A15D8C24EEB01300BFCD91 /* Result.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		A4CF76C003A2D1BDF1BA8D68 /* Pods */ = {
