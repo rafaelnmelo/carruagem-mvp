@@ -72,7 +72,7 @@ extension YearTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CarDetailViewController") as? CarDetailViewController {
+        if let detailVC = UIStoryboard(name: "CarDetailViewController", bundle: nil).instantiateViewController(withIdentifier: "CarDetailViewController") as? CarDetailViewController {
             if let data = presenter?.yearForRow(at: indexPath) {
                 detailVC.carModel = self.carModel
                 detailVC.manufactureYear = data.code

@@ -53,7 +53,7 @@ extension GarageViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let yearTableView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YearTableViewController") as? YearTableViewController {
+        if let yearTableView = UIStoryboard(name: "YearTableViewController", bundle: nil).instantiateViewController(withIdentifier: "YearTableViewController") as? YearTableViewController {
             if let cell = tableView.cellForRow(at: indexPath) as? GenericCellTableViewCell {
                 yearTableView.carModel = cell.code.text
                 yearTableView.carImage = cell.detailImage.image
