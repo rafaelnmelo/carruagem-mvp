@@ -2,7 +2,6 @@ import UIKit
 
 class CarDetailViewController: UIViewController {
     
-    @IBOutlet var detailsView: UIView!
     @IBOutlet var value: UILabel!
     @IBOutlet var brand: UILabel!
     @IBOutlet var model: UILabel!
@@ -24,7 +23,6 @@ class CarDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.barTintColor = .clear
         setupPresenter()
         getCarDescription()
     }
@@ -48,7 +46,6 @@ class CarDetailViewController: UIViewController {
     private func buildDetails() {
         if let data = self.presenter?.getCarDetail() {
             build(data: data)
-            detailsView.layer.cornerRadius = detailsView.frame.height/16
         }
     }
     
