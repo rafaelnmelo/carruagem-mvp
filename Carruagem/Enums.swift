@@ -20,3 +20,9 @@ public enum Endpoint {
 public struct BaseURL {
     static var domain = "https://parallelum.com.br/fipe/api/v1/carros/marcas"
 }
+
+/// Resposta de um método que pode resultar em falha ou sucesso
+public enum Result<T> {
+    case success(T)
+    case failure(ResponseError)
+}
